@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>SGD</title>
+
+        <!-- Bootstrap Core CSS -->
+        <?php Tag::css("login-box/bootstrap.min") ?>
+
+        <!-- MetisMenu CSS -->
+        <?php Tag::css("login-box/plugins/metisMenu/metisMenu.min") ?>
+
+        <!-- Custom CSS -->
+        <?php Tag::css("login-box/sb-admin-2") ?>
+
+        <!-- Custom Fonts -->
+        <?php Tag::css("login-box/font-awesome-4.1.0/css/font-awesome.min") ?>
+        <?php echo Html::includeCss() ?>
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+    </head>
+
+    <body>
+        <div class="col-md-12">
+
+            <h2 class="text-center">Sistema Gestion Documental PIS</h2>     
+            <div class="panel-body">
+                <?php View::content() ?> <!-- Imprime el contenido que le ponga en la vista q voy a renderizar -->
+            </div>
+
+        </div>
+
+
+        <!-- jQuery -->
+        <?php echo Tag::js("login-box/js/jquery") ?>
+
+        <!-- Bootstrap Core JavaScript -->
+        <?php echo Tag::js("login-box/js/bootstrap.min") ?>
+
+        <!-- Metis Menu Plugin JavaScript -->
+        <?php echo Tag::js("login-box/js/plugins/metisMenu/metisMenu.min") ?>
+
+        <!-- Custom Theme JavaScript -->
+        <?php echo Tag::js("login-box/js/sb-admin-2") ?>
+
+    </body>
+
+</html>
+

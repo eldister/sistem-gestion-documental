@@ -1,0 +1,18 @@
+<div id="login">   
+    <?php echo Form::open() ?>
+    <div class="form-group">
+        <div class="etiqueta" align="center"><h3>&iquest;No puede iniciar sesi&oacute;n&quest;</h3></div>
+        <div class="texto">Para restablecer la contraseña, introduzca la direcci&oacute;n de correo electr&oacute;nico que utiliz&oacute; para registrarse en Gesti&oacute;n Documental</div>
+    </div>
+    <div class="form-group">
+        <div class="etiqueta" align="center"><label for="contrasena">Correo electr&oacute;nico:</label></div>
+        <input class="form-control" placeholder="Correo" name="email" type="email" autofocus="">
+    </div>
+    <div class="form-group">
+        <a href="" class="btn btn-lg btn-success btn-block">Enviar</a>
+    </div>
+    <div class="form-group">
+        <a href="cancelar" class="btn btn-lg btn-success btn-block">Cancelar</a>
+    </div>
+    <?php echo Form::close()?>
+</div>

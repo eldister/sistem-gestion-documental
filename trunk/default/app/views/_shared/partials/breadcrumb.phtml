@@ -1,0 +1,14 @@
+
+
+
+<?php if(Config::get('config.application.breadcrumb')): ?>
+
+    
+    <?php Load::lib('breadcrumb') ?>
+    <?php $Crumb = new Breadcrumb() ?>
+    <?php $Crumb->addCrumb(0, _('Inicio'), Router::get('module')) ?>
+    <?php $Crumb->addCrumb(1, Router::get('controller'), Router::get('module') . '' . Router::get('controller')) ?>
+    <?php $Crumb->addCrumb(2, Router::get('action'), Router::get('module') . '' . Router::get('controller') . '' . Router::get('action')) ?>
+    <?php echo $Crumb->display() ?>
+    
+    <?php endif; ?>
