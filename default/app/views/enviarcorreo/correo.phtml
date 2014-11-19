@@ -1,0 +1,13 @@
+<html>
+    <head>
+        <?php $titulo = 'Enviar correo';?>
+    </head>
+    <body>
+        <div>
+            <div><label>Para: <?php echo Form::select(' ', ['Para los siguientes usuarios','Para todos los usuarios'])?></label></div></br>
+        </div>
+        <div>
+            <div><?php echo Form::text('destinatario')?></div>
+        </div>
+    </body>
+</html>
