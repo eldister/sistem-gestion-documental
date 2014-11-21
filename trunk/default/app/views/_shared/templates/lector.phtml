@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    
+    <title>SGD</title>    
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+      <!-- Bootstrap Core CSS -->
+    <?php  Tag::css('sbadmin/bootstrap.min')?>
+    
+    <!-- Custom CSS -->
+    <?php  Tag::css('sbadmin/sb-admin')?>
+  
+    <!-- Morris Charts CSS -->
+    <?php  Tag::css('sbadmin/plugins/morris')?>
+    <!-- Custom Fonts -->
+    <?php  Tag::css('sbadmin/font-awesome-4.1.0/css/font-awesome.min')?>
+    
+    <?php  Tag::css('breadcrumb')?>
+    
+    
+    <?php echo Html::includeCss() ?>
+</head>
+
+<body>
+    
+    <div id="wrapper">
+        <br>
+        <br>
+        <div class="col-lg-3"></div>
+        <div class="col-lg-6"></div>
+        <div class="col-lg-3"></br><?php echo Form::text('txt_Buscar'); echo Form::button('Buscar')?></br> <button type="button" class="btn btn-link">Busqueda avanzada</button></div>
+        
+        <?php View::partial('lector/sidebar')?>
+        
+        <div id="page-wrapper">
+            
+            <?php View::partial('lector/header',FALSE,array('titulo' => $titulo))?>
+            
+            <?php View::content()?> <!-- Imprime el contenido que le ponga en la vista q voy a renderizar -->
+        </div>        
+        
+    </div>
+    <!-- jQuery Version 1.11.0 -->
+    <?php echo Tag::js('sbadmin/jquery-1.11.0')?>
+   
+    <!-- Bootstrap Core JavaScript -->
+    <?php echo Tag::js('sbadmin/bootstrap.min')?>
+    
+
+    <!-- Morris Charts JavaScript 
+    <script src="js/plugins/morris/raphael.min.js"></script>
+    <script src="js/plugins/morris/morris.min.js"></script>
+    <script src="js/plugins/morris/morris-data.js"></script>
+   -->
+</body>
+</html>
