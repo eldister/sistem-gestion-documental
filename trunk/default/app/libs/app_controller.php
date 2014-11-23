@@ -36,12 +36,14 @@ class AppController extends Controller
 		//Se agregan los recursos osea todos los controladores con sus funciones
                 $this->acl->add_resource(new AclResource('usuario'), 'ingresar');
 		$this->acl->add_resource(new AclResource('usuariocrud'),'index','edit');
+                $this->acl->add_resource(new AclResource('registro'),'index','crear');
                 
 		 
  
 		//Se crean los permisos osea va 'tipoUsuario o rol','nombre_controlador' array('funcion1','funcion2','y las que quieran')
 		 // Inicio
 		$this->acl->allow('administrador', 'usuariocrud', array('index','edit'));
+                $this->acl->allow('administrador', 'registro', array('index','crear'));
 		$this->acl->allow('editor','usuariocrud', array('edit'));
                 $this->acl->allow("lector", 'usuariocrud', array('index'));
                 $this->acl->allow('', 'usuario', array('ingresar'));

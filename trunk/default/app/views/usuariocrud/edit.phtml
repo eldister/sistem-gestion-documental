@@ -1,128 +1,132 @@
 <?php View::content(); ?>
 <?php $titulo = 'Editar '; ?>
- 
-    <p>Los campos con (*) son obligatorios</p>
-    <?php echo Form::open(); ?>
-    <div class="row">
-        <div class="col-lg-2 text-center">
-            <div class="panel-body">
-                Codigo: </br><?php echo Form::text('Usuario.id') ?><!--<input type="text" id="txt_nombre">!-->
-            </div> 
-        
-        <div class="col-lg-2 text-center">
+
+<p>Los campos con (*) son obligatorios</p>
+<?php echo Form::open(); ?>
+<div class="row">
+    <div class="col-lg-4 text-center">
+        <div class="panel-body">
+            Codigo: </br><?php echo Form::text('Usuario.id') ?><!--<input type="text" id="txt_nombre">!-->
+        </div> 
+
+
+        <div class=" text-center">
             <div class="panel-body">
                 Nombre(*): </br><?php echo Form::text('Usuario.nombre') ?><!--<input type="text" id="txt_nombre">!-->
             </div>                        
         </div>
-        <div class="col-lg-2 text-center">
+
+        <div class=" text-center">
             <div class="panel-body">
                 Apellido(*): </br><?php echo Form::text('Usuario.apellido') ?><!--<input type="text" id="txt_apellid">!-->
             </div>
         </div>              
     </div>
-    <div class="row">
-        
-        <div class="col-lg-4 text-center">
-            <div class="panel-body">
-                  Nombre de Usuario(*): </br><?php echo Form::text('Usuario.nombreusuario') ?>
-            </div>                       
-        </div>               
+</div>
+<div class="row">
+
+    <div class="col-lg-4 text-center">
+        <div class="panel-body">
+            Nombre de Usuario(*): </br><?php echo Form::text('Usuario.nombreusuario') ?>
+        </div>                       
+    </div>               
+</div>
+<div class="row">
+
+    <div class="col-lg-4 text-center">
+        <div class="panel-body">
+            Contraseña(*): </br><?php echo Form::pass('Usuario.contrasena') ?><!--<input type="text" id="txt_contraseña" size="52px"></br>!-->
+            <h6>La contraseña debe tener mínimo 8 caracteres, debe incluir mínimo un número</h6>
+        </div>                        
     </div>
-    <div class="row">
-       
-        <div class="col-lg-4 text-center">
-            <div class="panel-body">
-                Contraseña(*): </br><?php echo Form::pass('Usuario.contrasena') ?><!--<input type="text" id="txt_contraseña" size="52px"></br>!-->
-                <h6>La contraseña debe tener mínimo 8 caracteres, debe incluir mínimo un número</h6>
-            </div>                        
-        </div>
-               
+
+</div>
+
+<div class="row">
+
+    <div class="col-lg-4 text-center">
+        <div class="panel-body">
+            Dirección correo electrónico(*): </br><?php echo Form::text('Usuario.email') ?><!--<input type="text" id="txt_direccioncorreo" size="52px"></br>!-->
+        </div>                        
     </div>
-    
-    <div class="row">
-        
-        <div class="col-lg-4 text-center">
-            <div class="panel-body">
-                Dirección correo electrónico(*): </br><?php echo Form::text('Usuario.email') ?><!--<input type="text" id="txt_direccioncorreo" size="52px"></br>!-->
-            </div>                        
-        </div>
-                
+
+</div>
+<div class="row">
+
+    <div class="col-lg-4 text-center">
+        <div class="panel-body">
+            Fecha nacimiento: </br><?php echo Form::date('Usuario.fechanacimiento_at') ?><!--<input type="text" id="txt_fecha" size="52px"></br>!-->
+        </div>                        
     </div>
-    <div class="row">
-        
-        <div class="col-lg-4 text-center">
-            <div class="panel-body">
-                Fecha nacimiento: </br><?php echo Form::date('Usuario.fechanacimiento_at') ?><!--<input type="text" id="txt_fecha" size="52px"></br>!-->
-            </div>                        
-        </div>
-               
+
+</div>
+<div class="row">
+
+    <div class="col-lg-4 text-center">
+        <div class="panel-body">
+            Oficina(*): </br><?php echo Form::text('Usuario.oficina') ?><!--<input type="text" id="txt_oficina" size="52px"></br>!-->
+        </div>                        
     </div>
-    <div class="row">
-        
-        <div class="col-lg-4 text-center">
-            <div class="panel-body">
-                Oficina(*): </br><?php echo Form::text('Usuario.oficina') ?><!--<input type="text" id="txt_oficina" size="52px"></br>!-->
-            </div>                        
-        </div>
-               
+
+</div>
+<div class="row">
+
+    <div class="col-lg-4 text-center">
+        <div class="panel-body">
+            Extensión(*): </br><?php echo Form::text('Usuario.extension') ?><!--<input type="text" id="txt_extension" size="52px"></br>!-->
+        </div>                        
     </div>
-    <div class="row">
-        
-        <div class="col-lg-4 text-center">
-            <div class="panel-body">
-                Extensión(*): </br><?php echo Form::text('Usuario.extension') ?><!--<input type="text" id="txt_extension" size="52px"></br>!-->
-            </div>                        
-        </div>
-               
+
+</div>
+<div class="row">
+
+    <div class="col-lg-4 text-center">
+        <div class="panel-body">
+            Celular: </br><?php echo Form::text('Usuario.celular') ?><!--<input type="text" id="txt_celular" size="52px"></br>!-->
+        </div>                        
     </div>
-    <div class="row">
-        
-        <div class="col-lg-4 text-center">
-            <div class="panel-body">
-                Celular: </br><?php echo Form::text('Usuario.celular') ?><!--<input type="text" id="txt_celular" size="52px"></br>!-->
-            </div>                        
-        </div>
-                
+
+</div>
+<div class="row">
+
+    <div class="col-lg-4 text-center">
+        <div class="panel-body">
+            Rol: </br><?php echo Form::text('Usuario.rol') ?><!--<input type="text" id="txt_celular" size="52px"></br>!-->
+        </div>                        
     </div>
-     <div class="row">
-        
-        <div class="col-lg-4 text-center">
-            <div class="panel-body">
-                Rol: </br><?php echo Form::text('Usuario.rol') ?><!--<input type="text" id="txt_celular" size="52px"></br>!-->
-            </div>                        
-        </div>
-                
+
+</div>
+<div class="row">
+
+    <div class="col-lg-4 text-center">
+        <div class="panel-body">
+            Estado: </br><?php echo Form::text('Usuario.estado') ?><!--<input type="text" id="txt_celular" size="52px"></br>!-->
+        </div>                        
     </div>
-     <div class="row">
-        
+
+</div>
+<div class="row">
+    <div class="col-lg-4 text-center">
+
         <div class="col-lg-4 text-center">
-            <div class="panel-body">
-                Estado: </br><?php echo Form::text('Usuario.estado') ?><!--<input type="text" id="txt_celular" size="52px"></br>!-->
-            </div>                        
-        </div>
-                
-    </div>
-    <div class="row">
-        <div class="col-lg-4 text-center">
-        
-        <div class="col-lg-2 text-center">
             <div class="panel-body">
                 <?php //echo Form::submit('crear') ?><!--<input type="submit" value="Crear" id="btn_crear">!-->
                 <div class="form-group">
-    <input type="submit" onclick="return confirm('¿Está seguro que desea Crear este Empleado?');return false;" class="btn btn-primary" value="Agregar">
-         
+                    <input type="submit" onclick="return confirm('¿Está seguro que desea Crear este Empleado?');
+                            return false;" class="btn btn-primary" value="Agregar">
 
-</div> 
+
+                </div> 
             </div>                        
         </div>
-        <div class="col-lg-2 text-center">
+        <div class="col-lg-4 text-center">
             <div class="panel-body">
-                
-                
+
+
                 <input type="submit" value="Cancelar"  class="btn btn-primary" id="btn_cancelar">
             </div>                        
         </div
-               
-    
-    
-    <?php echo Form::close() ?>
+
+
+
+<?php echo Form::close() ?>
