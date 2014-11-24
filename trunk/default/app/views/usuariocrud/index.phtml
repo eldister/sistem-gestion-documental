@@ -1,6 +1,30 @@
 <div class="content"> 
 
     <h2>Usuarios</h2>
+     <div>
+        <?php echo Form::open('usuariocrud/index'); ?>
+        <table >
+            <tr> 
+                <th>
+                <?php
+                $ar2 = array('registrados', 'inactivos', 'Aceptados');
+                echo Form::Select('region', $ar2, 'registrados');
+                ?>
+                </th>
+                <th>&nbsp; 
+               
+                </th>
+                <th>
+                <div > <input type="submit" class="btn btn-primary" value="filtrar">    </div>
+                </th>
+                
+            </tr>
+            </tr>
+        </table>
+        <?php echo Form::close() ?>
+
+    </div>
+    <br>
     <div class="table-responsive">
         <table class="table table-bordered table-hover table-striped">
             <thead>
