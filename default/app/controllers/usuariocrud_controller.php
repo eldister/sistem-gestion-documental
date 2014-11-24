@@ -10,9 +10,15 @@ class UsuariocrudController extends AppController {
 
         $usuario = new Usuario();
         // $this->listEmpleado = $empleado->getEmpleado($page);
+        $mi_variable = $_POST["region"]; 
+         
         $this->inner = $usuario->getUsuarios($page);
+        
+      
+      /* $usuario = new Usuario();
+        $consulta = "SELECT * FROM `usuario` WHERE `estado`='inactivo' ";
+        $this->inner = $usuario-> find_all_by_sql("SELECT * FROM `usuario` WHERE `estado`='inactivo' ");*/
 
-        //$this->create();
     }
 
     public function edit($id) {
