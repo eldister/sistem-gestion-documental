@@ -9,17 +9,12 @@ class UsuariocrudController extends AppController {
         $this->titulo = "Bienvenidos a Usuario"; // Pasa el titulo de la pagina
 
         $usuario = new Usuario();
-        // $this->listEmpleado = $empleado->getEmpleado($page);
-        $mi_variable = $_POST["region"]; 
          
-        $this->inner = $usuario->getUsuarios($page);
-        
-      
-      /* $usuario = new Usuario();
-        $consulta = "SELECT * FROM `usuario` WHERE `estado`='inactivo' ";
-        $this->inner = $usuario-> find_all_by_sql("SELECT * FROM `usuario` WHERE `estado`='inactivo' ");*/
-
-    }
+        $valorencombo = $_POST["region"];//supuestamente asi se saca el valor que selecciono en el combo box del index. este deberia ser el que se le pasa a getUsuarios para que los busquye
+        $this->inner = $usuario->getUsuarios($page,$valorencombo);
+    
+    
+         }
 
     public function edit($id) {
         $usuario = new Usuario();
@@ -46,7 +41,6 @@ class UsuariocrudController extends AppController {
         if (!$this->acl->is_allowed($this->userRol, $this->controller_name, $this->action_name)) {
             Flash::error("Acceso negado");
             return Router::redirect("administrador/inicioadmin", '3');
-            
         }
     }
 
