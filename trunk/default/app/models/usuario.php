@@ -11,7 +11,7 @@ class Usuario extends ActiveRecord {
     public function getUsuarios($pages, $valorencombo, $ppage = 5) {
 
         if ($valorencombo == 0) {
-            $consulta = "'registrados'";
+            $consulta = "'registrado'";
         }
         if ($valorencombo == 1) {
             $consulta = "'inactivo'";
