@@ -20,7 +20,7 @@ class RegistroController extends AppController {
     public function crear(){
         //print_r($_POST);// exit();
        // print_r($_POST);
-        View::template('registro_usuario'); 
+        View::template('login-box'); 
         $this->titulo = "Crear Usuario"; // titulo a mostrar
         
         /**

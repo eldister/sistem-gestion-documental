@@ -4,7 +4,7 @@ class RestaurarcuentaController extends AppController{
     
     function restaurarcuenta(){
         View::template('login-box');
-        Load::lib('auth');
+       // Load::lib('auth');
         
     }
     
@@ -18,5 +18,9 @@ class RestaurarcuentaController extends AppController{
     
     public function cancelar(){
         Router::redirect("usuario/ingresar");
+    }
+    
+     public function actualizardatos(){
+        View::template('login-box');
     }
 }
