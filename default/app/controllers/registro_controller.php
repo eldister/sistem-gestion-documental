@@ -1,7 +1,8 @@
 <?php
 
 Load::model('usuario');
-load::lib('PHPMailer/class.phpmailer');
+load::lib('PHPMailer/PHPMailerAutoload');
+
 class RegistroController extends AppController {
     
     
@@ -18,26 +19,21 @@ class RegistroController extends AppController {
     }*/
     
     public function crear(){
-        //print_r($_POST);// exit();
-       // print_r($_POST);
         View::template('login-box'); 
-        $this->titulo = "Crear Usuario"; // titulo a mostrar
-        
+        $this->titulo = "Crear Usuario"; // titulo a mostrar        
         /**
         * Se verifica si el usuario envio el form (submit) y si ademas
         * dentro del array POST existe uno llamado "menus"
         * el cual aplica la autocarga de objeto para guardar los
         * datos enviado por POST utilizando autocarga de objeto
         */
-        if(Input::hasPost('Usuario')){     
-            
+        if(Input::hasPost('Usuario')){            
            /**
             * se le pasa al modelo por constructor los datos del form y ActiveRecord recoge esos datos
             * y los asocia al campo correspondiente siempre y cuando se utilice la convención
             * model.campo
             */
-           //print_r($_POST);
-                        
+           //print_r($_POST);                        
            //En caso que falle la operación de guardar
            if($_POST['Usuario']['contrasena'] == $_POST['CONFIRMAR_CONTRASENA'])
             {
@@ -47,17 +43,33 @@ class RegistroController extends AppController {
                     $com = (md5($_POST['CONFIRMAR_CONTRASENA']));
                     $_POST['CONFIRMAR_CONTRASENA'] = $com;
                     $_POST['Usuario']['contrasena'] = $con;
+                    $correo = $_POST['Usuario']['email'];
+                    $nombre = $_POST['Usuario']['nombre'] + $_POST['Usuario']['apellido'];
                     $Usuario = new Usuario(Input::post('Usuario'));
                     $Usuario->initialize();
                     if(!$Usuario->save()){
                         Flash::error('Falló Operación');
                     }else{
-                        Flash::valid('Operación exitosa');
-                        //('luvivianaraujo@gmail.com', 'prueba', 'ojalá llegue :P');
-                        mail('ruizcsteven@gmail.com', 'prueba', 'ojalá llegue :P');
+                        $mail = new PHPMailer();
+                        $mail->isSMTP();
+                        //$mail­>SMTPDebug = 2;
+                        $mail->SMTPAuth = true;
+                        $mail->SMTPSecure = "ssl";
+                        $mail->Host = "smtp.gmail.com";
+                        $mail->Port = 465;
+                        $mail->Username = "gestiondocumentalpis@gmail.com";
+                        $mail->Password = "unicaucapis";
+                        $mail->setFrom('gestiondocumentalpis@gmail.com', 'Gestión Documental');
+                        //$mail­>AddReplyTo("ruizcsteven@gmail.com", "Steven Ruiz");
+                        $mail->Subject = "Resgistro en Sistema Gesti&oacute;n Documental PIS";
+                        $mail->msgHTML("https://localhost/trunk/usuario/ingresar");
+                        //$address = "steeven@unicauca.edu.co";
+                        $mail->addAddress($correo, $nombre);
+                        if (!$mail->send()) {
+                            echo "Error al enviar: " . $mail->ErrorInfo;
+                        }
                         //Eliminamos el POST, si no queremos que se vean en el form
                         Input::delete();
-                        //enrutando por defecto al index del controller
                         return Router::redirect("registro/registroexitoso");
                     }
                }else{
