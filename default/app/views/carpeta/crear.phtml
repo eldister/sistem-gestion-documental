@@ -1,0 +1,57 @@
+<?php View::content(); ?>
+<?php $titulo = 'Crear una carpeta en Sistema Gestión Documental PIS'; ?>
+
+<p class="text-center">Los campos con (*) son obligatorios</p>
+<?php echo Form::open(); ?>
+
+
+<div class="row">   
+    <div class="col-lg-2 text-center">
+        <div class="panel-body">
+            Nombre(*): </br><?php echo Form::text('Carpeta.nombrecarpeta') ?>
+        </div>                        
+    </div>
+  </div>
+
+
+<div class="row"> 
+<div class="col-lg-2 text-center">  
+    <label> Seleccione la carpta contenedora        
+        <?php
+        //combo boc para que aparezcan los nombres de los departamentos y no sus codigos
+        // nombre del input, nombre del atributo para mostrar, modelo y la fucion que retorna los valores que quiero, el valor que quiero que este por defecto
+        echo Form::dbSelect('Carpeta.carpeta_id', 'nombrecarpeta', array('carpeta', 'buscarcarpeta'), '-Seleccione--')
+        ?></label>
+</div> </div>
+  <div class="row">
+
+        <div class="col-lg-4 text-center">
+            <div class="panel-body">
+                </br><?php echo  Form::hidden('Carpeta.usuario_id',null,Auth::get('id')); ?>
+            </div>                        
+        </div>
+      
+    </div>
+
+
+
+
+
+
+<div class="row">        
+    <div class="col-lg-2 text-center">
+        <div class="panel-body">
+            <div class="form-group">
+                <input href="" type="submit" onclick="return confirm('¿Está seguro que desea Crear esta carpeta?');
+                            return false;" class="btn btn-primary" value="Crear">
+            </div> 
+        </div>                        
+    </div>
+    <div class="col-lg-2 text-center">
+        <div class="panel-body">
+            <a href="regresar" class="btn btn-primary" id="btn_cancelar">Cancelar</a>
+        </div>                        
+    </div>        
+</div>
+
+<?php echo Form::close() ?>

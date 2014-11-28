@@ -3,9 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/xampp/htdocs/trunk/default/app/views/registro/crear.phtml</file>
+            <file>file:/C:/xampp/htdocs/trunk/default/app/views/_shared/partials/editor/sidebar.phtml</file>
             <file>file:/C:/xampp/htdocs/trunk/default/app/models/usuario.php</file>
             <file>file:/C:/xampp/htdocs/trunk/default/app/controllers/registro_controller.php</file>
             <file>file:/C:/xampp/htdocs/trunk/default/app/controllers/usuariocrud_controller.php</file>
+            <file>file:/C:/xampp/htdocs/trunk/default/app/views/_shared/partials/sbadmin/sidebar.phtml</file>
             <file>file:/C:/xampp/htdocs/trunk/default/app/views/usuariocrud/index.phtml</file>
         </group>
     </open-files>
