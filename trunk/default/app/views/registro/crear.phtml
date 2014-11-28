@@ -3,15 +3,16 @@
  
 <p class="text-center">Los campos con (*) son obligatorios</p>
     <?php echo Form::open(); ?>
-    <div class="col-lg-4">
-    </div>
+    
     <div class="row">
-        <div class="col-lg-2 text-center">
+        <div class="col-lg-4 text-center">
             <div class="panel-body">
                 Nombre(*): </br><?php echo Form::text('Usuario.nombre') ?>
             </div>                        
         </div>
-        <div class="col-lg-2 text-center">
+        <div class="col-lg-2">
+        </div>
+        <div class="col-lg-4 text-center">
             <div class="panel-body">
                 Apellido(*): </br><?php echo Form::text('Usuario.apellido') ?>
             </div>
@@ -111,7 +112,7 @@
         <div class="col-lg-2 text-center">
             <div class="panel-body">
                 <div class="form-group">
-                    <input href="" type="submit" onclick="return confirm('¿Está seguro que desea Crear este Usuario?');return false;" class="btn btn-primary" value="Agregar">
+                    <input href="" type="submit" onclick="return confirmar('¿Está seguro que desea Crear este Usuario?');return false;" class="btn btn-primary" value="Agregar"/>
                 </div> 
             </div>                        
         </div>
