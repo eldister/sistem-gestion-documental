@@ -1,8 +1,10 @@
+<?php View::content(); ?>
 <html>
     <head>
         <?php $titulo = 'Enviar correo';?>
     </head>
     <body>
+        <?php echo Form::open(); ?>
         <div class="row">
             <div class="col-lg-4 text-center">
                 <div class="panel-body">
@@ -17,26 +19,27 @@
                         </tr>
                         <tr>
                             <td></td>
-                            <td><?php echo Form::text('destinatarios');?></td>
+                            <td><?php echo Form::text('correo.destinatarios');?></td>
                         </tr>
                         <tr>
                             <td></br><label>Asunto:</label></td>
-                            <td><?php echo Form::text('asunto');?></td>
+                            <td><?php echo Form::text('correo.asunto');?></td>
                         </tr>
                         <tr>
                             <td></br><label>Mensaje:</label></td>
                             <td></td>
                         </tr>
                         <tr>
-                            <td colspan="2"><?php echo Form::textarea('mensaje');?></td>
+                            <td colspan="2"><?php echo Form::textarea('correo.mensaje');?></td>
                         </tr>
                         <tr>
-                            <td><input href="" type="submit" class="btn btn-primary" value="Enviar"></td>
-                            <td><input href="" type="submit" class="btn btn-primary" value="Cancelar"></td>
+                            <td><input href="" type="submit" class="btn btn-primary" value="Enviar"/></td>
+                            <td><input href="" type="submit" class="btn btn-primary" value="Cancelar"/></td>
                         </tr>
                     </table>
                 </div>
             </div>
         </div>
+        <?php echo Form::close() ?>
     </body>
 </html>
