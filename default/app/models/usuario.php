@@ -23,6 +23,12 @@ class Usuario extends ActiveRecord {
       //  $consulta = ".$valorencombo."; // este supuestamente es el valor que me deveria llegar del index mejor dicho el combo pero no se como pasar esa variable hasta aky
        // print_r($consulta);
         return $page = $this->paginate_by_sql("SELECT * FROM `usuario` WHERE `estado`=" . $consulta, 'per_page: 5', "page: 1");
-    }
+    
+        
+        }
 
+    public function getUsuarioEmail($email)
+    {
+        return $resultado = $usuario->find_by_email($email);
+    }
 }

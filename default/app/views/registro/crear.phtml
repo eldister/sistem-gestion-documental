@@ -1,121 +1,99 @@
 <?php View::content(); ?>
 <?php $titulo = 'Cree su cuenta en Sistema Gestión Documental PIS'; ?>
- 
 <p class="text-center">Los campos con (*) son obligatorios</p>
     <?php echo Form::open(); ?>
-    
     <div class="row">
         <div class="col-lg-4 text-center">
             <div class="panel-body">
                 Nombre(*): </br><?php echo Form::text('Usuario.nombre') ?>
             </div>                        
         </div>
-        <div class="col-lg-2">
-        </div>
-        <div class="col-lg-4 text-center">
-            <div class="panel-body">
-                Apellido(*): </br><?php echo Form::text('Usuario.apellido') ?>
-            </div>
-        </div>              
-    </div>
-    <div class="col-lg-4">
     </div>
     <div class="row">
-        <div class="col-lg-4 text-center">
+        <div class="col-lg-4 ">
+                 <div class="panel-body">
+                  Apellido(*): </br><?php echo Form::text('Usuario.apellido') ?>
+                 </div>
+         </div>  
+    </div>
+    <div class="row">
+        <div class="col-lg-12 ">
             <div class="panel-body">
                   Nombre de Usuario(*): </br><?php echo Form::text('Usuario.nombreusuario') ?>
             </div>                       
         </div>               
     </div>
-    <div class="col-lg-4">
-    </div>
+   
     <div class="row">
-
-        <div class="col-lg-4 text-center">
+    <div class="col-lg-12 ">
             <div class="panel-body">
                 Contraseña(*): </br><?php echo Form::pass('Usuario.contrasena') ?>
                 <h6>La contraseña debe tener mínimo 8 caracteres, debe incluir mínimo un número</h6>
             </div>                        
         </div>
     </div>
-    <div class="col-lg-4">
-    </div>
     <div class="row">
-
-        <div class="col-lg-4 text-center">
+        <div class="col-lg-12 ">
             <div class="panel-body">
                 Confirmar Contraseña(*): <br><?php echo Form::pass('CONFIRMAR_CONTRASENA') ?><br/>
             </div>                        
         </div>
     </div>
-    <div class="col-lg-4">
-    </div>
+    
     <div class="row">
-
-        <div class="col-lg-4 text-center">
+    <div class="col-lg-12 ">
             <div class="panel-body">
                 Dirección correo electrónico(*): </br><?php echo Form::text('Usuario.email') ?>
             </div>                        
         </div>
     </div>
-    <div class="col-lg-4">
-    </div>
+    
     <div class="row">
-
-        <div class="col-lg-4 text-center">
+    <div class="col-lg-12 ">
             <div class="panel-body">
                 Fecha nacimiento: </br><?php echo Form::date('Usuario.fechanacimiento_at') ?>
             </div>                        
         </div>
     </div>
-    <div class="col-lg-4">
-    </div>
     <div class="row">
-
-        <div class="col-lg-4 text-center">
+    <div class="col-lg-4 ">
             <div class="panel-body">
                 Oficina(*): </br><?php echo Form::text('Usuario.oficina') ?>
             </div>                        
         </div>
     </div>
-    <div class="col-lg-4">
-    </div>
+    
     <div class="row">
-
-        <div class="col-lg-4 text-center">
+    <div class="col-lg-4 ">
             <div class="panel-body">
                 Extensión(*): </br><?php echo Form::text('Usuario.extension') ?>
             </div>                        
         </div>
     </div>
-    <div class="col-lg-4">
-    </div>
+    
     <div class="row">
-
-        <div class="col-lg-4 text-center">
+        <div class="col-lg-4 ">
             <div class="panel-body">
                 Celular: </br><?php echo Form::text('Usuario.celular') ?>
             </div>                        
         </div>
     </div>
-  <div class="row">
 
-        <div class="col-lg-4 text-center">
-            <div class="panel-body">
-                </br><?php echo  Form::hidden('Usuario.estado',null,'registrado'); ?>
-            </div>                        
-        </div>
+  <div class="row">
+   <div class="col-lg-4">
+        <div class="panel-body">
+            </br><?php echo  Form::hidden('Usuario.estado',null,'registrado'); ?>
+        </div>                        
     </div>
-    <div class="col-lg-4">
-    </div>
+   </div>
+    
     <div class="row">        
         <div class="col-lg-2 text-center">
             <div class="panel-body">
-                <div class="form-group">
-                    <input href="" type="submit" onclick="return confirmar('¿Está seguro que desea Crear este Usuario?');return false;" class="btn btn-primary" value="Agregar"/>
-                </div> 
+                <input href="" type="submit" onclick="return confirmar('¿Está seguro que desea Crear este Usuario?');return false;" class="btn btn-primary" value="Agregar"/>
             </div>                        
         </div>
+        <div class="col-lg-2"></div>
         <div class="col-lg-2 text-center">
             <div class="panel-body">
                 <a href="regresar" class="btn btn-primary" id="btn_cancelar">Cancelar</a>
