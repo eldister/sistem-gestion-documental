@@ -9,7 +9,7 @@
         <meta name="author" content="">
 
         <title>SGD</title>  
-        
+
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -41,26 +41,37 @@
             <br>
             <br>
             <br>
-            <div class="col-lg-3"></div>
-            <div class="col-lg-6"></div>
-            <div class="col-lg-3"></br><?php echo Form::text('txt_Buscar');
-        echo Form::button('Buscar') ?></br> <button type="button" class="btn btn-link">Busqueda avanzada</button></div>
 
-<?php View::partial('sbadmin/sidebar') ?>
+
+            <?php View::partial('sbadmin/sidebar') ?>
 
             <div id="page-wrapper">
 
                 <?php //View::partial('sbadmin/header', FALSE, array('titulo' => $titulo)) ?> 
+                <br>
+                <br>
+                <br>
+                <div class="col-lg-3">
+                    <div class="nav navbar-right ">
 
-<?php View::content() ?> <!-- Imprime el contenido que le ponga en la vista q voy a renderizar -->
+                        <?php
+                        echo Form::text('txt_Buscar');
+                        echo Form::button('Buscar')
+                        ?></br> <button type="button" class="btn btn-link">Busqueda avanzada</button>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <br>
+                <?php View::content() ?> <!-- Imprime el contenido que le ponga en la vista q voy a renderizar -->
             </div>        
 
         </div>
         <!-- jQuery Version 1.11.0 -->
-<?php echo Tag::js('sbadmin/jquery-1.11.0') ?>
+        <?php echo Tag::js('sbadmin/jquery-1.11.0') ?>
 
         <!-- Bootstrap Core JavaScript -->
-<?php echo Tag::js('sbadmin/bootstrap.min') ?>
+        <?php echo Tag::js('sbadmin/bootstrap.min') ?>
 
 
         <!-- Morris Charts JavaScript 
