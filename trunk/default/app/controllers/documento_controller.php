@@ -1,13 +1,31 @@
 <?php
-
+Load::model('Documento');
 class documentoController extends AppController{
-     public function editardoc()
-    {
-        
-    }
+     
     public function creardoc()
     {
-        
+         View::content('creardoc');
+         if(Input::hasPost('Documento')){
+         $descripcion = $_POST['Documento']['DESCRIPCION'];
+         $nombre = $_POST['Documento']['NOMBREDOCUMENTO'];
+         $folio = $_POST['Documento']['FOLIO'];
+         $fechapublicacion = $_POST['Documento']['FECHAPUBLICACION_AT'];
+         $palabrasclave = $_POST['Documento']['PALABRASCLAVE'];
+         //$archivo = $_FILES["CONTENIDO"]["tmp_name"]; 
+         $tamanio = $_FILES["CONTENIDO"]["size"];
+         
+         $Documento = new Documento(Input::post('Documento'));
+         $Documento->initialize();
+         if(!$Documento->save()){
+             Flash::error('Falló Operación');
+         }else{
+}
+         }
+    }
+
+     public function editardoc()
+    {
+         View::content('editardoc');
     }
     /*
      public function editarDoc($id=null)

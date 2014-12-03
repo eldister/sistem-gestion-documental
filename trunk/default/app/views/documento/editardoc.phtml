@@ -1,15 +1,16 @@
 <?php $titulo = 'Editar Documento'; ?>
  
-    <p class="text-center">Los campos con (*) son obligatorios</p>
-    <?php echo Form::open(); ?>
+    <p class="">Los campos con (*) son obligatorios</p>
+    <?php echo Form::openMultipart(); ?>
+      
      <div class="row">
-        <div class="col-lg-3 text-center">
+        <div class="col-lg-3">
             <div class="panel-body">
             </div>                        
         </div>
-        <div class="col-lg-6 text-center">
+        <div class="col-lg-6">
             <div class="panel-body">
-                Nombre Documento(*):</br><?php echo Form::text('documento.NOMBREOCUMENTO') ?><!--<input type="text" id="txt_nombre">!-->
+                Nombre Documento(*):</br><?php echo Form::text('Documento.NOMBREDOCUMENTO') ?><!--<input type="text" id="txt_nombre">!-->
             </div>                        
         </div>
         <div class="col-lg-3 text-center">
@@ -18,16 +19,16 @@
         </div>        
     </div>
     <div class="row">
-        <div class="col-lg-4 text-center">
+        <div class="col-lg-3 text-center">
             <div class="panel-body">
             </div>                        
         </div>
-        <div class="col-lg-4 text-center">
+        <div class="col-lg-6 ">
             <div class="panel-body">
-               Fecha Publicación: </br><?php echo Form::date('documento.FECHAPUBLICACION') ?><!--<input type="text" id="txt_fecha" size="52px"></br>!-->
+               Fecha Publicación: </br><?php echo Form::date('Documento.FECHAPUBLICACION_AT') ?><!--<input type="text" id="txt_fecha" size="52px"></br>!-->
             </div>                        
         </div>
-        <div class="col-lg-4 text-center">
+        <div class="col-lg-3 text-center">
             <div class="panel-body">
             </div>                        
         </div>        
@@ -38,9 +39,9 @@
             <div class="panel-body">
             </div>                        
         </div>
-        <div class="col-lg-6 text-center">
+        <div class="col-lg-6">
             <div class="panel-body">
-                Descripción Corta(*):</br><?php echo Form::text('documento.DESCRIPCION') ?><!--<input type="text" id="txt_direccioncorreo" size="52px"></br>!-->
+                Descripción Corta(*):</br> <?php echo Form::textarea('Docuemnto.DESCRIPCION') ?>
             </div>                        
         </div>
         <div class="col-lg-3 text-center">
@@ -54,9 +55,9 @@
             <div class="panel-body">
             </div>                        
         </div>
-        <div class="col-lg-6 text-center">
+        <div class="col-lg-6 ">
             <div class="panel-body">
-                Palabras Clave(*):</br><?php echo Form::text('documento.PALABRAS') ?><!--<input type="text" id="txt_direccioncorreo" size="52px"></br>!-->
+                Palabras Clave(*):</br><?php echo Form::text('Documento.PALABRASCLAVE') ?><!--<input type="text" id="txt_direccioncorreo" size="52px"></br>!-->
             </div>                        
         </div>
         <div class="col-lg-3 text-center">
@@ -66,16 +67,16 @@
     </div>
     
     <div class="row">
-        <div class="col-lg-4 text-center">
+        <div class="col-lg-3 text-center">
             <div class="panel-body">
             </div>                        
         </div>
-        <div class="col-lg-4 text-center">
+        <div class="col-lg-6 ">
             <div class="panel-body">
-               Folio(*): </br><?php echo Form::text('documento.FOLIO') ?><!--<input type="text" id="txt_extension" size="52px"></br>!-->
+               Folio(*): </br><?php echo Form::text('Documento.FOLIO') ?><!--<input type="text" id="txt_extension" size="52px"></br>!-->
             </div>                        
         </div>
-        <div class="col-lg-4 text-center">
+        <div class="col-lg-3 text-center">
             <div class="panel-body">
             </div>                        
         </div>        
@@ -85,10 +86,10 @@
             <div class="panel-body">
             </div>                        
         </div>
-        <div class="col-lg-6 text-center">
+        <div class="col-lg-6 r">
             <div class="panel-body">
-                    <input type="file" ><!--<input type="text" id="txt_celular" size="52px"></br>!-->
-                <h6>Si sube un documento se perdera el anterior </h6>
+               Subir documento <?php echo Form::file('Documento.CONTENIDO')?>
+               <h6>Si sube un documento se perdera el anterior </h6>
             </div>                        
         </div>
         <div class="col-lg-3 text-center">
@@ -97,7 +98,7 @@
         </div>        
     </div>
     <div class="row">
-        <div class="col-lg-4 text-center">
+        <div class="col-lg-3 text-center">
             <div class="panel-body">
             </div>                        
         </div>
