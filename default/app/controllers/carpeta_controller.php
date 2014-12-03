@@ -22,6 +22,12 @@ class CarpetaController extends AppController{
      
    }
    function index($page=1){
+       
+         //al directorio public hay que darle premisos 777
+        $estructura = "prueva";// crea una careta en default puplic
+        if (!mkdir($estructura, 0777, true)) {
+            die('Fallo al crear las carpetas...');
+        }
        $carpe=new Carpeta();
        $this->inner=$carpe->getcarpetas_de_usuarios($page);
    }
