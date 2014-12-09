@@ -1,19 +1,28 @@
-<!DOCTYPE HTML>
-<?php Tag::js('js/highcharts')?>
-<?php Tag::js('js/modules/exporting')?>
-<?php Tag::js('jquery/jquery.min')?>
-<html>
-	<head>
-            <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-            <title>Highcharts Example</title>	
-	</head>
-	<body>
-            <!--<script src="https://code.jquery.com/jquery.js"></script>-->
-    <!-- Importo el archivo Javascript de Highcharts directamente desde su servidor 
-            <script src="js/stock/highstock.js"></script>
-            <script src="js/modules/exporting.js"></script>-->
-            <div id="container" style="height: 400px"></div>
-            <script type="text/javascript">
+<?php View::content(); ?>
+    <div class="row">
+        <div class="col-lg-6 text-center">
+            <div class="panel-body">
+                <a href="/docmasleidos">Documentos más leidos</a>
+            </div>                        
+        </div>
+        <div class="col-lg-6 text-center">
+            <div class="panel-body">
+                <a>Otra estadistica</a>
+            </div>                        
+        </div>
+    </div>
+    <?php echo Form::open()?>
+        <div class="row">
+        <div class="col-lg-12 text-center">
+            <div class="panel-body">
+                <label>Seleccione el rango de fechas en el que desea consultar los documentos m&aacute;s le&iacute;dos</label> </br>
+                Desde: <?php echo Form::date('inicio')?> Hasta: <?php echo Form::date('fin')?> <input href="" type="submit" class="btn btn-primary" value="Consultar"/>
+            </div>                        
+        </div>
+    </div>
+    <?php echo Form::close()?>
+
+        <script type="text/javascript">
             $(function () {
                 $(document).ready(function() {
                     Highcharts.setOptions({
