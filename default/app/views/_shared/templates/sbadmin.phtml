@@ -10,7 +10,7 @@
 
         <title>SGD</title>  
 
-
+        
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
@@ -53,7 +53,6 @@
                 <br>
                 <div class="col-lg-3">
                     <div class="nav navbar-right ">
-
                         <?php
                         echo Form::text('txt_Buscar');
                         echo Form::button('Buscar')
@@ -73,7 +72,11 @@
         <!-- Bootstrap Core JavaScript -->
         <?php echo Tag::js('sbadmin/bootstrap.min') ?>
 
-
+        
+        
+        <?php echo Tag::js('js/highcharts') ?>
+        <?php echo Tag::js('js/highcharts-3d') ?>
+        <?php echo Tag::js('js/modules/exporting') ?>
         <!-- Morris Charts JavaScript 
         <script src="js/plugins/morris/raphael.min.js"></script>
         <script src="js/plugins/morris/morris.min.js"></script>

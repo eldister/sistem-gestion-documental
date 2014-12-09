@@ -1,5 +1,5 @@
 <?php
-
+Load::lib('libchart');
 Load::model('carpeta');
 Load::model('documento');
 Config::set('config.application.breadcrumb', true); // Habilitar la miga de pan
@@ -41,9 +41,16 @@ class CarpetaController extends AppController{
         $this->innerdoc=$documento->buscar_documentos_en_carpeta($page,$id);
        
    }
-
-        
-        
-        
+   
+   function grafica (){
+       $chart = new VerticalBarChart(300, 200);
+       $dataSet = new XYDataSet();
+       $dataSet->addPoint(new Point("Jan 2014", 273));
+       $dataSet->addPoint(new Point("Mar 2014", 300));
+       $dataSet->addPoint(new Point("Apr 2014", 400));
+       $chart->setDataSet($dataSet);
+       $chart->setTitle("Prueba");
+       $chart->render('public/img/graficas/grafica1.png');
+   }   
 
 }
