@@ -1,26 +1,25 @@
 <?php
-Load::model('usuario');
+Load::model('documento');
 class EstadisticasController extends AppController {
     
     public function index(){
+        $this->titulo = 'Estadisticas';
+        View::template('sbadmin');
         
-        //View::template('sbadmin');
-        $Usuario = new Usuario();
-        $vector[][] = null;        
-        $fila = -1;
-        foreach($Usuario->find_all_by_sql("select * from usuario where fechanacimiento_at between '2014-03-14' and '2014-12-19'") as $usuario){
-            $col = 0;
-            $vector[$fila += 1][$col] = $usuario->nombre;
-            $vector[$fila][$col += 1] = $usuario->apellido;
-        }
-        print_r($vector);
     }
     
     public function docmasleidos(){
-        
+        $this->titulo = 'Estadisticas';
         View::template('sbadmin');
+        if(Input::hasPost('estadistica'))
+        {
+            $inicio = $_POST['estadistica']['inicio'];
+            $fin = $_POST['estadistica']['fin'];
+            $documento=new Documento();
+            $this->doc=$documento->lecturas($pages=1,$inicio, $fin);
+           //print_r($documento);
+        }
         
-        
+        //print_r($data);
     }
-
 }

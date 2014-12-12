@@ -63,7 +63,11 @@
                 </tr>
             </thead>  
             <tbody>
-                <?php foreach ($innerdoc->items as $item) : ?>
+                    <tr>
+                       
+                        <td><?php echo $item->nombrecarpeta ?> </td>
+                        <td><?php echo $item->fechacreacion_at ?> </td>                        
+                    <?php foreach ($innerdoc->items as $item) : ?>
                     <tr>
                        
                         <td><?php echo $item->nombrecarpeta ?> </td>
