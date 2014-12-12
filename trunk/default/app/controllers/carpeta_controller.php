@@ -1,6 +1,7 @@
 <?php
 Load::model('carpeta');
 Load::model('documento');
+
 Config::set('config.application.breadcrumb', true); // Habilitar la miga de pan
 class CarpetaController extends AppController{
     function crear(){
@@ -18,19 +19,24 @@ class CarpetaController extends AppController{
            }
        }     
    }
-   function index($page=1){
-       
-         //al directorio public hay que darle premisos 777
-        $estructura = "prueva";// crea una careta en default puplic
-        if (!mkdir($estructura, 0777, true)) {
-            die('Fallo al crear las carpetas...');
-        }
-       $carpe=new Carpeta();
-       $this->inner=$carpe->getcarpetas_de_usuarios($page);
-   }
-   function abrir($id)
-   {
-       $carpe=new Carpeta();
+  
+
+    function index($page = 1) {
+        $this->titulo = "Mis Documentos";
+        $this->titulo2 = "";
+        $this->usuaior = Auth::get('nombre');
+
+        $carpe = new Carpeta();
+        $this->inner = $carpe->getcarpetas_de_usuarios($page);
+    }
+
+    function abrir($id) {
+        $carpe = new Carpeta();
+        $this->titulo = " ";
+        $this->titulo2 = "Estas en: " . $nombrecarpeta = $carpe->url_carpeta_madre($id)->url;
+
+        $this->usuaior = Auth::get('nombre');
+        $carpe = new Carpeta();
         $carpetaid = $_POST["id"];
         $documento=new Documento();
        $this->inner=$carpe->abrir_carpeta($page,$id);

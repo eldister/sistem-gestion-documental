@@ -2,7 +2,7 @@
 
 Load::model('usuario');
 load::lib('PHPMailer/PHPMailerAutoload');
-
+Config::set('config.application.breadcrumb', true);
 class RegistroController extends AppController {
     
     

@@ -1,0 +1,22 @@
+<?php View::content(); ?>
+<div class="form-group">
+    <?php echo Form::open(); // por defecto llama a la misma url ?>
+</div>
+<div class="form-group">
+    <?php echo "Ruta Original ".$titulo2 ?>
+    <label>Mover a:
+        <?php
+        //combo boc para que aparezcan los nombres de los departamentos y no sus codigos
+        // nombre del input, nombre del atributo para mostrar, modelo y la fucion que retorna los valores que quiero, el valor que quiero que este por defecto
+        echo Form::dbSelect('carpeta.id', 'nombrecarpeta', array('carpeta', 'getcarpetasdeusuarios'), '')
+        ?></label>
+</div>
+ <div class="form-group">
+    <input type="submit" onclick="return confirm('¿Está seguro que desea mover este documento?');return false;" class="btn btn-primary" value="Mover">
+     <a href="http://localhost/trunk/carpeta/index" class="btn btn-primary" id="btn_cancelar">Cancelar</a>
+    
+ </div>  
+<div class="form-group">
+    <?php echo Form::hidden('oculto') ?>
+</div>
+<?php echo Form::close() ?>

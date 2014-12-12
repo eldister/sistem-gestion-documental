@@ -18,6 +18,7 @@ class AppController extends Controller
 {
     public $acl; //variable objeto ACL
 	public $userRol = ""; //variable con el rol del usuario autenticado en la aplicación
+        
 
     final protected function initialize()
     {
@@ -25,6 +26,7 @@ class AppController extends Controller
         //esto evita que en cada controlador se haga llamado de la  plantilla
         //Si en otro controlador hago llamado a otra plantilla, se sobreescribira esta linea
         if(Auth::is_valid()) $this->userRol = Auth::get("rol");
+               
  
 		$this->acl = new Acl();
 		//Se agregan los roles

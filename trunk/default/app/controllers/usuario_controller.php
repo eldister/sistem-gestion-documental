@@ -1,5 +1,6 @@
 <?php
 Load::model('usuario');
+//Config::set('config.application.breadcrumb', FALSE);
 
 /*class UsuarioController extends  ScaffoldController{
     
@@ -9,6 +10,7 @@ public $model = 'usuario';
     
     class UsuarioController extends ApplicationController
     {
+        
 	
 	public function index() 
 	{
@@ -17,6 +19,7 @@ public $model = 'usuario';
 	
 	function ingresar()
 	{
+            Config::set('config.application.breadcrumb', FALSE);
             View::template('login-box'); 
             Load::lib('auth');
 	    
@@ -62,7 +65,14 @@ public $model = 'usuario';
         }
         
         public function crear(){
+            Config::set('config.application.breadcrumb', FALSE);
             Router::redirect("registro/crear");
+        }
+        public function salir() {
+            //Load::lib('auth');
+            Auth::destroy_identity();
+            Router::redirect("usuario/ingresar");
+            
         }
     }
 
