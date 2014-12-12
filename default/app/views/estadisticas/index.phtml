@@ -1,5 +1,5 @@
 <?php View::content(); ?>
-
+<?php echo Tag::js('jsapi') ?>
     <div class="row">
         <div class="col-lg-6 text-center">
             <div class="panel-body">
@@ -12,61 +12,63 @@
             </div>                        
         </div>
     </div>
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-        <!--<script src="highchartsjs/highcharts.js"></script>
-        <script src="highchartsjs/highcharts-3d.js"></script>
-        <script src="highchartsjs/modules/exporting.js"></script> -->
+    <div class="row">
+        <div class="col-lg-6 ">
+            <div class="panel-body">
+                <div id="piechart_3d" style="width: 510px; height: 500px;"></div>
+            </div>                        
+        </div>
+        <div class="col-lg-6 ">
+            <div class="panel-body">
+                <div id="chart_div" style="width: 515px; height: 500px;"></div>
+            </div>                        
+        </div>
+    </div>
         
-        <script src="http://code.highcharts.com/highcharts.js"></script>
-        <script src="http://code.highcharts.com/highcharts-3d.js"></script>
-        <script src="http://code.highcharts.com/modules/exporting.js"></script>
         
-        <script language="javascript">
-            $(function () {
-                $('#container').highcharts({
-                    chart: {
-                        type: 'pie',
-                        options3d: {
-                            enabled: true,
-                            alpha: 45,
-                            beta: 0
-                        }
-                    },
-                    title: {
-                        text: 'Browser market shares at a specific website, 2014'
-                    },
-                    tooltip: {
-                        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
-                    },
-                    plotOptions: {
-                        pie: {
-                            allowPointSelect: true,
-                            cursor: 'pointer',
-                            depth: 35,
-                            dataLabels: {
-                                enabled: true,
-                                format: '{point.name}'
-                            }
-                        }
-                    },
-                    series: [{
-                        type: 'pie',
-                        name: 'Browser share',
-                        data: [
-                            ['Firefox',   45.0],
-                            ['IE',       26.8],
-                            {
-                                name: 'Chrome',
-                                y: 12.8,
-                                sliced: true,
-                                selected: true
-                            },
-                            ['Safari',    8.5],
-                            ['Opera',     6.2],
-                            ['Others',   0.7]
-                        ]
-                    }]
-                });
-            });
+        <script type="text/javascript">
+            google.load("visualization", "1", {packages:["corechart"]});
+            google.setOnLoadCallback(drawChart);
+            function drawChart() {
+              var data = google.visualization.arrayToDataTable([
+                  <?php if($item != null){?>
+                ['Task', 'Hours per Day'],
+                <?php foreach ($doc->items as $item):?>
+                ['<?php echo $item->nombredocumento ?>', <?php echo $item->lecturas ?>],
+                <?php endforeach; ?>
+                  <?php }?>
+              ]);
+
+              var options = {
+                title: 'Documentos más leidos',
+                is3D: true,
+              };
+
+              var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
+              chart.draw(data, options);
+            }
         </script>
-   
+        <script type="text/javascript">
+                google.load("visualization", "1", {packages:["corechart"]});
+		google.setOnLoadCallback(drawChart);
+		function drawChart() {
+
+		  var data = google.visualization.arrayToDataTable([
+			['Year', 'Sales'],
+			['2004',  1000],
+			['2005',  1170],
+			['2006',  660],
+			['2007',  1030]
+		  ]);
+
+		  var options = {
+			title: 'Company Performance',
+			hAxis: {title: 'Year', titleTextStyle: {color: 'red'}}
+		  };
+
+		  var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+
+		  chart.draw(data, options);
+
+		}
+        </script>

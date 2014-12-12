@@ -47,6 +47,7 @@ class RegistroController extends AppController {
                     $nombre = $_POST['Usuario']['nombre'] + $_POST['Usuario']['apellido'];
                     $Usuario = new Usuario(Input::post('Usuario'));
                     $Usuario->initialize();
+                    //acá verificar correo
                     if(!$Usuario->save()){
                         Flash::error('Falló Operación');
                     }else{
@@ -59,7 +60,7 @@ class RegistroController extends AppController {
                         $mail->Port = 465;
                         $mail->Username = "gestiondocumentalpis@gmail.com";
                         $mail->Password = "unicaucapis";
-                        $mail->setFrom('gestiondocumentalpis@gmail.com', 'Gestión Documental');
+                        $mail->setFrom('gestiondocumentalpis@gmail.com', 'Gesti&oacute;n Documental');
                         //$mail­>AddReplyTo("ruizcsteven@gmail.com", "Steven Ruiz");
                         $mail->Subject = "Resgistro en Sistema Gesti&oacute;n Documental PIS";
                         $mail->msgHTML("https://localhost/trunk/usuario/ingresar");
@@ -88,7 +89,7 @@ class RegistroController extends AppController {
     
      public function registroexitoso() 
     {
-    $this->titulo = "Usuario Registrado";
-    View::template('registro_usuario'); 
+        $this->titulo = "Usuario Registrado";
+        View::template('formularioregistro'); 
     }
 }
