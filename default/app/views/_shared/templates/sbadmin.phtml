@@ -41,24 +41,13 @@
             <br>
             <br>
             <br>
-
-
-            <?php View::partial('sbadmin/sidebar') ?>
+             <br>
+            <?php View::partial('sbadmin/sidebar',FALSE,array('usuaior' => $usuaior)) ?>
 
             <div id="page-wrapper">
 
-                <?php //View::partial('sbadmin/header', FALSE, array('titulo' => $titulo)) ?> 
-                <br>
-                <div class="col-lg-6 text-center">
-                    <div class="panel-body">
-                        
-                    </div>                        
-                </div>
-                <div class="col-lg-3 text-center">
-                    <div class="panel-body">
-                        
-                    </div>                        
-                </div>
+                <?php View::partial('sbadmin/header', FALSE, array('titulo' => $titulo,'usuaior' => $usuaior,'titulo2' => $titulo2,)) ?> 
+               
                 <div class="col-lg-3">
                     <div class="nav navbar-right ">
                         <?php
@@ -68,8 +57,7 @@
                     </div>
                 </div>
                 <br>
-                <br>
-                <br>
+                
                 <?php View::content() ?> <!-- Imprime el contenido que le ponga en la vista q voy a renderizar -->
             </div>        
 

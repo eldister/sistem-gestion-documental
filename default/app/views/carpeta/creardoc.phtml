@@ -1,0 +1,91 @@
+<?php $titulo = 'Crear Documento'; ?>
+
+<p class="text-center">Los campos con (*) son obligatorios</p>
+<?php echo Form::openMultipart(); ?>
+<div class="row">
+    
+    <div class="col-lg-6 text-center">
+        <div class="panel-body">
+    <?php echo Form::hidden('documento.nombredocumento') ?><!--nombre oculto por que toma el valor del archivo!-->
+        </div>                        
+    </div>
+           
+</div>
+<div class="row">
+    
+    <div class="col-lg-6 text-center">
+        <div class="panel-body">
+            Nombre del Autor(*):</br><?php echo Form::text('documento.autor') ?><!--<input type="text" id="txt_nombre">!-->
+        </div>                        
+    </div>
+           
+</div>
+<div class="row">
+   
+    <div class="col-lg-4 text-center">
+        <div class="panel-body">
+           Fecha Publicación: </br><?php echo Form::date('documento.fechapublicacion') ?><!--<input type="text" id="txt_fecha" size="52px"></br>!-->
+        </div>                        
+    </div>
+         
+</div>
+
+<div class="row">
+    
+    <div class="col-lg-6 text-center">
+        <div class="panel-body">
+            Descripción Corta(*):</br> 
+            <?php echo Form::textarea('documento.descripcion');?>
+           
+        </div>                        
+    </div>
+        
+</div>
+
+<div class="row">
+   
+    <div class="col-lg-6 text-center">
+        <div class="panel-body">
+            Palabras Clave(*):</br><?php echo Form::text('documento.palabrasclave') ?><!--<input type="text" id="txt_direccioncorreo" size="52px"></br>!-->
+        </div>                        
+    </div>
+          
+</div>
+
+<div class="row">
+   
+    <div class="col-lg-4 text-center">
+        <div class="panel-body">
+           Folio(*): </br><?php echo Form::text('documento.folio') ?><!--<input type="text" id="txt_extension" size="52px"></br>!-->
+        </div>                        
+    </div>
+         
+</div>
+<div class="row">
+                         
+    
+    <div class="col-lg-4 text-center">
+       
+            Subir documento 
+            <?php echo Form::file('archivo') ?>
+            <?php echo Form::hidden('oculto') //para saber si se envió el form ?>
+                               
+    </div>
+           
+</div>
+<div class="row">
+    
+    <div class="col-lg-2 text-center">
+        <div class="panel-body">
+            <?php echo Form::submit('Guardar') ?><!--<input type="submit" value="Crear" id="btn_crear">!-->
+        </div>                        
+    </div>
+    <div class="col-lg-2 text-center">
+        <div class="panel-body">
+            <input type="submit" value="Cancelar" id="btn_cancelar">
+        </div>                        
+    </div>
+     </div>
+     
+
+    <?php echo Form::close() ?>

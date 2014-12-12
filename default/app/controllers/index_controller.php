@@ -4,8 +4,8 @@
  * Controller por defecto si no se usa el routes
  * 
  */
-Config::set('config.application.breadcrumb', true); //miga de pan
-
+//Config::set('config.application.breadcrumb', true); //miga de pan
+//Config::set('config.application.breadcrumb', true);
 class IndexController extends AppController
 {
 

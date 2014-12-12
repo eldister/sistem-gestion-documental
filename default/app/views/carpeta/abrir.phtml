@@ -1,6 +1,6 @@
 <div class="content"> 
 
-   
+
     <div>
         <?php echo Form::open(); ?>
         <table >
@@ -14,10 +14,13 @@
             </th>
 
             </tr>
-            </tr>
+
         </table>
         <?php echo Form::close() ?>
-         <h2>Carpetas</h2>
+        <h4 >
+            <!--El titulo se manda desde el controlador  $this->titulo = "Crear usuario desde saludo controller";-->
+            <?php echo $titulo2 ?>
+        </h4>
 
     </div>
     <br>
@@ -25,7 +28,7 @@
         <table class="table table-bordered table-hover table-striped">
             <thead>
                 <tr>
-                   
+
                     <th><strong>Nombre</strong></th>                    
                     <th><strong>fecha creacion</strong></th>
 
@@ -34,12 +37,12 @@
             <tbody>
                 <?php foreach ($inner->items as $item) : ?>
                     <tr>
-                       
-                        <td><?php echo $item->nombrecarpeta ?> </td>
-                        <td><?php echo $item->fechacreacion_at ?> </td>                        
-                        <td><?php echo Html::linkAction("abrir/$item->id/", 'Abrir') ?>
-                            <?php echo Html::linkAction("crear/", 'crear') ?>
 
+                        <td><?php echo Html::linkAction("abrir/$item->id/", $item->nombrecarpeta) ?> </td>
+                        <td><?php echo $item->fechacreacion_at ?> </td>                        
+                        <td>
+                            <?php echo Html::linkAction("crear/$item->id/", 'crear carpeta') ?>
+                            <?php echo Html::linkAction("creardoc/$item->id/", 'crear documento') ?>
                         </td>
                     </tr>
                 <?php endforeach; ?>
@@ -49,16 +52,16 @@
     </div>
 
     <?php View::partial('paginators/classic', false, array('page' => $inner, 'show' => 5, 'url' => 'carpeta/index')); ?>
-    
-      <h2>Documentos</h2>
-    
+
+    <h2>Documentos</h2>
+
     <div class="table-responsive">
         <table class="table table-bordered table-hover table-striped">
             <thead>
                 <tr>
-                   
+
                     <th><strong>Nombre</strong></th>                    
-                    <th><strong>fecha creacion</strong></th>
+                    <th><strong>fecha publicacion</strong></th>
 
                 </tr>
             </thead>  
@@ -69,11 +72,14 @@
                         <td><?php echo $item->fechacreacion_at ?> </td>                        
                     <?php foreach ($innerdoc->items as $item) : ?>
                     <tr>
-                       
-                        <td><?php echo $item->nombrecarpeta ?> </td>
-                        <td><?php echo $item->fechacreacion_at ?> </td>                        
+
+                        <td><?php echo $item->nombredocumento ?> </td>
+                        <td><?php echo $item->fechapublicacion ?> </td>                        
                         <td><?php echo Html::linkAction("abrir/$item->id/", 'Abrir') ?>
-                            <?php echo Html::linkAction("del/$item->id/", 'Borrar') ?>
+                            <?php echo Html::linkAction("editardoc/$item->id/", 'Editar') ?>
+                            <?php echo Html::linkAction("borrardoc/$item->id/ ", 'Borrar') ?>
+                             <?php echo Html::linkAction("descargarDocumento/$item->id/ ", 'Descargar') ?>
+                            <?php echo Html::linkAction("moverdocumento/$item->id/ ", 'Mover') ?>
 
                         </td>
                     </tr>
